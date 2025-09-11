@@ -2,7 +2,7 @@ from tkinter import Tk,Label,Radiobutton,Button,IntVar
 
 w=Tk()
 w.title("RadioButtons")
-w.state("zooomed")
+w.state("zoomed")
 
 vegetable=IntVar()
 cyn=IntVar()
@@ -37,11 +37,13 @@ def new():
     vegetable.set(0)
     cyn.set(0)
     oyn.set(0)
+    L4.grid_forget()
     B1.configure(state="disabled")
     B2.configure(state="normal")
 
 
 def order():
+    global L4
     B1.configure(state="normal")
     B2.configure(state="disabled")
     B3.configure(state="normal")
@@ -80,9 +82,6 @@ B1.grid(row=14,column=0)
 B2=Button(w,text="Order",command=order)
 B2.grid(row=14,column=1)
 B3=Button(w,text="Exit",command=exitGUI)
-B3.grid(row=15,column=2)
+B3.grid(row=14,column=2)
 
 w.mainloop()
-
-
-
